@@ -5,9 +5,10 @@ import sys
 titles = []
 path = sys.argv[1]
 season = sys.argv[2]
+episodes = sys.argv[3]
 globpath = path+"\\Season "+season+"\\*.mp4"
 files = glob.glob(globpath)
-with open('Simpsons Episodes.csv') as csvfile:
+with open(episodes) as csvfile:
 	reader = csv.DictReader(csvfile, delimiter = ',')
 	for row in reader:
 		seasonnum = row['SeasonNum']
